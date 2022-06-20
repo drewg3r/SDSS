@@ -1,0 +1,116 @@
+{
+    "metadata": {
+        "partition_label": "MyDisk",
+        "superuser_group": "admin"
+    },
+    "users": {
+        "andrew": {
+            "hashed_password": "286755fad04869ca523320acce0dc6a4",
+            "groups": [
+                "andrew",
+                "storage"
+            ]
+        },
+        "root": {
+            "hashed_password": "0325f1f79b7e17d57132300ef4d31fe3",
+            "groups": [
+                "root",
+                "admin"
+            ]
+        }
+    },
+    "filesystem": {
+        "root": {
+            "type": "directory",
+            "content": {
+                "root-file.txt": {
+                    "type": "file",
+                    "owner": "root",
+                    "group": "storage",
+                    "permissions": 4,
+                    "content": "This is root's document."
+                },
+                "home": {
+                    "type": "directory",
+                    "content": {
+                        "andrew": {
+                            "type": "directory",
+                            "content": {
+                                "document.txt": {
+                                    "type": "file",
+                                    "owner": "andrew",
+                                    "group": "andrew",
+                                    "permissions": 644,
+                                    "content": "Andrew's document"
+                                },
+                                "doc.txt": {
+                                    "type": "file",
+                                    "owner": "andrew",
+                                    "group": "andrew",
+                                    "permissions": 640,
+                                    "content": "\"hello\""
+                                }
+                            }
+                        },
+                        "root": {
+                            "type": "directory",
+                            "content": {}
+                        }
+                    }
+                },
+                "andrew-file.txt": {
+                    "type": "file",
+                    "owner": "andrew",
+                    "group": "andrew",
+                    "permissions": 777,
+                    "content": "This is andrew's document."
+                },
+                "admin": {
+                    "type": "directory",
+                    "content": {
+                        "users": {
+                            "type": "directory",
+                            "content": {
+                                "andrew": {
+                                    "type": "file",
+                                    "owner": "root",
+                                    "group": "admin",
+                                    "permissions": 660,
+                                    "content": "andrew a(2022-06-20) andrew,storage\nq:\n 1: red\n 2: 3"
+                                },
+                                "andy": {
+                                    "type": "file",
+                                    "owner": "root",
+                                    "group": "admin",
+                                    "permissions": 660,
+                                    "content": "andy 1a2s3d4f(2022-05-27) andy\nq:\n 3: andy\n 1: red\n 6: sugar"
+                                },
+                                "root": {
+                                    "type": "file",
+                                    "owner": "root",
+                                    "group": "admin",
+                                    "permissions": 660,
+                                    "content": "root 1a2s3d4f(2022-05-27) root,admin\nq:\n 3: andy\n 1: red\n 6: sugar"
+                                },
+                                "aliona": {
+                                    "type": "file",
+                                    "owner": "root",
+                                    "group": "root",
+                                    "permissions": 660,
+                                    "content": "aliona 1a2s3d4f(2022-05-27) aliona\nq:\n 2: 4\n 5: cats\n 3: mine"
+                                }
+                            }
+                        },
+                        "control_questions": {
+                            "type": "file",
+                            "owner": "root",
+                            "group": "admin",
+                            "permissions": 660,
+                            "content": "What is your favourite color? \nWhat is your favourite number? \nWhat is your favourite name? \nWhat was your first pet? \nCats or dogs? \nWhat is your favourite dessert?"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
